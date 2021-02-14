@@ -10,10 +10,13 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-
-
+    <string name="subscriptions">Subscriptions</string>
+    <string name="orders">Orders</string>
+    <string name="badges">Badges</string>
+    <string name="cart">Cart</string>
     <string name="facebook_app_id">739247473323578</string>
     <string name="fb_login_protocol_scheme">fb739247473323578</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

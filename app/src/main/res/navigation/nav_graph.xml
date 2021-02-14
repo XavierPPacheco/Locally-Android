@@ -2,4 +2,34 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph" />
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/actionsFragment">
+    <fragment
+        android:id="@+id/profile"
+        android:name="com.parternship.locally.fragments.profile"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/actionsFragment"
+        android:name="com.parternship.locally.fragments.ActionsFragment"
+        android:label="fragment_actions"
+        tools:layout="@layout/fragment_actions" >
+        <action
+            android:id="@+id/action_actionsFragment_to_subscriptionFragment"
+            app:destination="@id/subscriptionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.parternship.locally.fragments.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" />
+    <fragment
+        android:id="@+id/subscriptionFragment"
+        android:name="com.parternship.locally.fragments.SubscriptionFragment"
+        android:label="fragment_subscription"
+        tools:layout="@layout/fragment_subscription" >
+        <action
+            android:id="@+id/action_subscriptionFragment_to_actionsFragment"
+            app:destination="@id/actionsFragment" />
+    </fragment>
+</navigation>

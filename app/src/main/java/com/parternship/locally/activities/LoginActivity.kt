@@ -7,12 +7,11 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
-import com.facebook.CallbackManager
-import com.facebook.FacebookCallback
-import com.facebook.FacebookException
+import com.facebook.*
 import com.facebook.login.LoginResult
 import com.facebook.login.widget.LoginButton
 import com.parternship.locally.R
+import org.json.JSONObject
 
 class LoginActivity : AppCompatActivity() {
     lateinit var callbackManager: CallbackManager
@@ -23,16 +22,14 @@ class LoginActivity : AppCompatActivity() {
 
         callbackManager = CallbackManager.Factory.create()
 
-        val image :ImageView = findViewById(R.id.image_view)
         val loginButton = findViewById<LoginButton>(R.id.login_button)
+
         loginButton.setPermissions(listOf("public_profile","email"))
         loginButton.registerCallback(callbackManager,object :FacebookCallback<LoginResult?>{
             override fun onSuccess(loginResult: LoginResult?) {
                 Log.d("TAG", "Success Login")
-                if (loginResult != null) {
-                    Glide.with(this@LoginActivity).load("https://graph.facebook.com/" + loginResult.accessToken.userId + "/picture?return_ssl_resources=1").into(image)
-                }
-                //loginResult.accessToken
+                loginSuccess()
+
             }
 
             override fun onCancel() {
@@ -51,5 +48,13 @@ class LoginActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         callbackManager.onActivityResult(requestCode, resultCode, data)
         super.onActivityResult(requestCode, resultCode, data)
+    }
+
+    /**
+     * This function exists to extend Google login as well
+     */
+    fun loginSuccess(){
+        val intent  =  Intent(this@LoginActivity,MainActivity::class.java)
+        startActivity(intent)
     }
 }
