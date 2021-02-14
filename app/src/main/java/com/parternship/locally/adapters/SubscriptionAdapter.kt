@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.parternship.locally.R
+import com.parternship.locally.entity.Item
 import com.parternship.locally.entity.Subscription
 
 class SubscriptionAdapter (private val dataSet : Array<Subscription>) : RecyclerView.Adapter<SubscriptionAdapter.ViewHolder>() {
@@ -25,13 +26,17 @@ class SubscriptionAdapter (private val dataSet : Array<Subscription>) : Recycler
 
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
-        viewHolder.name.text = dataSet[position]
+        viewHolder.name.text = dataSet[position].name
+        viewHolder.price.text = dataSet[position].getPrice().toString()
+
+
+
     }
 
     // Return the size of your dataset (invoked by the layout manager)
     override fun getItemCount() = dataSet.size
 
-}
+
 
 
 
