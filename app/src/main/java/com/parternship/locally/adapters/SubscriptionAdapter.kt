@@ -54,4 +54,8 @@ class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         }
     }
 
+    interface  OnSubscriptionListener{
+      fun  onSubscriptionClick(subscription : Subscription)
+    }
+
 }

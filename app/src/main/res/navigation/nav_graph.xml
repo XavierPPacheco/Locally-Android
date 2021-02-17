@@ -31,5 +31,17 @@
         <action
             android:id="@+id/action_subscriptionFragment_to_actionsFragment"
             app:destination="@id/actionsFragment" />
+        <action
+            android:id="@+id/action_subscriptionFragment_to_subscriptionDetail"
+            app:destination="@id/subscriptionDetail" />
+    </fragment>
+    <fragment
+        android:id="@+id/subscriptionDetail"
+        android:name="com.parternship.locally.fragments.SubscriptionDetail"
+        android:label="fragment_subscription_detail"
+        tools:layout="@layout/fragment_subscription_detail" >
+        <action
+            android:id="@+id/action_subscriptionDetail_to_subscriptionFragment"
+            app:destination="@id/subscriptionFragment" />
     </fragment>
 </navigation>

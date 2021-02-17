@@ -1,4 +1,9 @@
 package com.parternship.locally.viewmodel
 
-class SubscriptionViewModel {
+import androidx.lifecycle.ViewModel
+
+class SubscriptionViewModel : ViewModel() {
+
+
+
 }
