@@ -5,7 +5,11 @@
 
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.profile">
-
+<data>
+    <variable
+        name="viewModel"
+        type="com.parternship.locally.viewmodel.UserViewModel" />
+</data>
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -24,7 +28,18 @@
         android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:layout_marginBottom="280dp"
+        android:layout_marginBottom="68dp"
+        android:text="@={viewModel.name}"
+        app:layout_constraintBottom_toTopOf="@id/email"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginBottom="160dp"
+        android:text="@={viewModel.email}"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
